@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar/navbar";
 import "./globals.css";
 import Footer from "@/components/footer/footer";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata = {
   title: "Store Manager",
@@ -9,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" dir="rtl">
+    <html lang="fa" dir="rtl">
       <head>
         <link
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
         <link href="/web-icon-01.png" rel="icon" />
       </head>
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

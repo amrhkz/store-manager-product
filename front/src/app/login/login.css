@@ -1,0 +1,43 @@
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.card h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.card input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: #fff;
+}
+
+.card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}

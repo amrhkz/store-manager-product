@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import "./navbar.css";
+import { useAuth } from "@/context/AuthContext";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const { user, logout } = useAuth();
   return (
     <header className="navbar">
       <div className="navbar-container">
@@ -17,6 +19,7 @@ function Navbar() {
           <a href="#faq">سوالات متداول</a>
         </nav>
         <div className="navbar-actions">
+          {user && <button onClick={logout}>خروج</button>}
           <a href="/login" className="login-btn">
             ورود
           </a>
