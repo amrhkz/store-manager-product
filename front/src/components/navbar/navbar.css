@@ -58,6 +58,20 @@
   font-size: 24px;
   cursor: pointer;
 }
+.dashboard-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
 @media (max-width: 900px) {
   .navbar-menu {
     position: absolute;

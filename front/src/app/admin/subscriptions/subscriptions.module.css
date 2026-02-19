@@ -1,0 +1,84 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tableWrapper {
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: right;
+  padding: 16px;
+  font-size: 14px;
+  color: var(--second);
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pending {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.active {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--buy);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.approve {
+  background: var(--buy);
+  color: #020617;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reject {
+  background: var(--sell);
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.activeLabel {
+  color: var(--buy);
+  font-weight: 600;
+}

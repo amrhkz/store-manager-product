@@ -16,7 +16,7 @@
 }
 
 .sidebar h2 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--primary);
 }
@@ -24,13 +24,13 @@
 .sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .sidebar nav a {
   padding: 12px 14px;
   border-radius: 10px;
-  color: var(--second);
+  color: var(--text);
   text-decoration: none;
   transition: 0.2s;
 }
@@ -43,11 +43,4 @@
 .main {
   flex: 1;
   padding: 32px;
-}
-
-.content {
-  background: var(--card);
-  border-radius: 18px;
-  padding: 32px;
-  min-height: calc(100vh - 64px);
 }

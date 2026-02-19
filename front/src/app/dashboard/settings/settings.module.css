@@ -1,0 +1,128 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Header */
+.header h1 {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--second);
+}
+
+/* Card */
+.card {
+  background: var(--second);
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Form */
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.field input:disabled {
+  opacity: 0.6;
+}
+
+/* Buttons */
+.primaryBtn {
+  align-self: flex-start;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--text);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.dangerBtn {
+  align-self: flex-start;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #7f1d1d;
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+}
+
+/* Preferences */
+.preferences {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prefItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prefItem span {
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Danger Zone */
+.danger {
+  border-color: #7f1d1d;
+  background: rgba(127, 29, 29, 0.2);
+}
+
+.deleteBtn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #dc2626;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

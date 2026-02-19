@@ -41,13 +41,21 @@ function Hero() {
             </a>
           </motion.div>
         </div>
+
         <motion.div
-          className="hero-image"
+          className="hero-monitor"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <img src="/img/dashboard.png" alt="Dashboard Preview" />
+          <div className="monitor-wrapper">
+            <div className="monitor">
+              <img src="/img/dashboard.png" alt="Dashboard Preview" />
+            </div>
+
+            <div className="monitor-stand-neck"></div>
+            <div className="monitor-stand-base"></div>
+          </div>
         </motion.div>
       </div>
     </section>

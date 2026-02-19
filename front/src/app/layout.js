@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar/navbar";
 import "./globals.css";
 import Footer from "@/components/footer/footer";
-import { AuthProvider } from "@/context/AuthContext";
+import AuthGuard from "@/components/auth/AuthGuard";
 
 export const metadata = {
   title: "Store Manager",
@@ -20,14 +20,14 @@ export default function RootLayout({ children }) {
           href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
           rel="stylesheet"
         />
-        <link href="/web-icon-01.png" rel="icon" />
+        {/* <link href="/web-icon-01.png" rel="icon" /> */}
       </head>
       <body>
-        <AuthProvider>
+        <AuthGuard>
           <Navbar />
           {children}
           <Footer />
-        </AuthProvider>
+        </AuthGuard>
       </body>
     </html>
   );

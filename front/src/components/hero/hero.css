@@ -1,18 +1,17 @@
 .hero {
   padding: 120px 0 80px;
-  background: var(--bg);
-  height: 100vh;
+  background: var(--body);
+  min-height: 100vh;
 }
 
 .hero-container {
   max-width: 1300px;
-  height: 100%;
   margin: 0 auto;
   padding: 0 24px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
 }
 
 /* Text */
@@ -49,7 +48,7 @@
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: 0.25s;
 }
 
 .btn-primary:hover {
@@ -66,12 +65,100 @@
   color: var(--text);
 }
 
-/* Image */
-.hero-image img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
+/* Monitor */
+.monitor-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.hero-monitor {
+  display: flex;
+  justify-content: center;
+}
+
+.monitor-frame {
+  background: var(--border);
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  width: 100%;
+  max-width: 520px;
+}
+
+.monitor-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.monitor-bar span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #334155;
+}
+
+.monitor-bar span:nth-child(1) {
+  background: #ef4444;
+}
+
+.monitor-bar span:nth-child(2) {
+  background: #f59e0b;
+}
+
+.monitor-bar span:nth-child(3) {
+  background: #22c55e;
+}
+
+.monitor-screen {
+  background: #020617;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.monitor-screen img {
+  width: 100%;
+  display: block;
+}
+
+.monitor {
+  background: var(--border);
+  padding: 14px;
+  border-radius: 22px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+.monitor img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+}
+
+.monitor-stand-neck {
+  width: 28px;
+  height: 90px;
+  margin-top: -6px;
+  /* چسبوندن به مانیتور */
+  background: var(--border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.monitor-stand-base {
+  width: 240px;
+  height: 16px;
+  margin-top: -2px;
+  background: var(--border);
+  border-radius: 999px;
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
 
 /* Responsive */
 @media (max-width: 1024px) {

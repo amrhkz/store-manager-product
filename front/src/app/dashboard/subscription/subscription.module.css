@@ -1,75 +1,83 @@
 .wrapper {
-  max-width: 1100px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .title {
   font-size: 26px;
-  margin-bottom: 24px;
+  font-weight: 700;
 }
 
-.statusBox {
-  background: #020617;
-  border: 1px solid #1e293b;
+.activeBanner {
+  background: var(--buy);
+  padding: 16px;
   border-radius: 14px;
-  padding: 18px 22px;
-  margin-bottom: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.statusBox span {
-  color: #94a3b8;
-}
-
-.statusBox strong {
-  color: #38bdf8;
+  color: var(--text);
+  font-weight: 600;
 }
 
 .plans {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .planCard {
-  background: #020617;
-  border: 1px solid #1e293b;
+  background: var(--second);
+  border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 28px 22px;
-  text-align: center;
-  transition: 0.3s;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: 0.2s;
 }
 
 .planCard:hover {
-  transform: translateY(-6px);
-  border-color: #38bdf8;
+  transform: translateY(-4px);
 }
 
-.planCard h2 {
-  font-size: 20px;
-  margin-bottom: 14px;
+.activePlan {
+  border: 2px solid var(--buy);
+  box-shadow: var(--shadow);
+}
+
+.disabledPlan {
+  opacity: 0.5;
+}
+
+.currentBadge {
+  background: var(--buy);
+  color: var(--text);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  width: fit-content;
 }
 
 .price {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 6px;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .duration {
-  color: #94a3b8;
-  margin-bottom: 24px;
+  color: var(--text);
 }
 
 .planCard button {
-  width: 100%;
+  margin-top: auto;
   padding: 12px;
   border-radius: 12px;
   border: none;
-  background: #38bdf8;
-  color: #020617;
-  font-weight: bold;
   cursor: pointer;
+  background: var(--primary);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.planCard button:disabled {
+  background: var(--card);
+  color: var(--second);
+  cursor: not-allowed;
 }

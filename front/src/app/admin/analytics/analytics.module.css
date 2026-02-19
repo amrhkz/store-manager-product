@@ -1,0 +1,92 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.kpiCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kpiLabel {
+  font-size: 14px;
+  color: var(--second);
+}
+
+.kpiValue {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.kpiValue small {
+  font-size: 14px;
+  margin-right: 6px;
+  color: var(--second);
+}
+
+.chartCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.chartHeader h2 {
+  font-size: 18px;
+}
+
+.chartHeader span {
+  font-size: 13px;
+  color: var(--second);
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  height: 220px;
+}
+
+.barWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar {
+  width: 100%;
+  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
+  border-radius: 10px 10px 4px 4px;
+  transition: 0.3s;
+}
+
+.barWrapper span {
+  font-size: 12px;
+  color: var(--second);
+}
