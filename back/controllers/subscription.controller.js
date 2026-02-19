@@ -35,3 +35,14 @@ export const getSubscription = async (req, res) => {
 
   res.json(subscription);
 };
+// controllers/subscription.controller.js
+export const getSubscriptionById = async (req, res) => {
+  const subscription = await Subscription.findById(req.params.id)
+    .populate("plan");
+
+  if (!subscription) {
+    return res.status(404).json({ message: "Subscription not found" });
+  }
+
+  res.json(subscription);
+};

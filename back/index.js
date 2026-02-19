@@ -7,42 +7,36 @@ import authRoutes from "./routes/auth.routes.js";
 import authMiddleware from "./middlewares/auth.middleware.js";
 import planRoutes from "./routes/plan.routes.js";
 import subscriptionRoutes from "./routes/subscription.routes.js";
+import paymentRoutes from "./routes/payment.routes.js";
 
-
-// Load env variables
 dotenv.config();
 connectDB();
 
-// Create app
 const app = express();
 
-// Middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
 
-// Test route
+app.use("/api/auth", authRoutes);
 app.use("/api/plans", planRoutes);
 app.use("/api/subscriptions", subscriptionRoutes);
+app.use("/api/payments", paymentRoutes);
 app.get("/", (req, res) => {
   res.send("Server is running 🚀");
 });
-app.use("/api/auth", authRoutes);
 app.get("/api/protected", authMiddleware, (req, res) => {
   res.json({
     message: "دسترسی مجاز ✔️",
-    user: req.user
+    user: req.user,
   });
 });
 
-
-
-// Port
 const PORT = process.env.PORT || 5000;
 
 // Start server

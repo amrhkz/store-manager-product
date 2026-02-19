@@ -52,14 +52,12 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // 1. Validation
     if (!email || !password) {
       return res.status(400).json({
         message: "ایمیل و رمز عبور الزامی است",
       });
     }
 
-    // 2. Find user
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({
@@ -67,7 +65,6 @@ export const login = async (req, res) => {
       });
     }
 
-    // 3. Compare password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({
@@ -75,7 +72,6 @@ export const login = async (req, res) => {
       });
     }
 
-    // 4. Create token
     const token = jwt.sign(
       {
         userId: user._id,
@@ -85,25 +81,27 @@ export const login = async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    // 5. Set cookie
     res.cookie("token", token, {
       httpOnly: true,
       sameSite: "lax",
-      secure: false, // در production: true
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 روز
+      secure: false, // production: true
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    // 6. Response
+    // 👇 خیلی مهم
     res.json({
       message: "ورود با موفقیت انجام شد",
+      user: {
+        id: user._id,
+        email: user.email,
+        role: user.role,
+      },
     });
   } catch (error) {
-    console.error("Login error:", error);
-    res.status(500).json({
-      message: "خطای سرور",
-    });
+    res.status(500).json({ message: "خطای سرور" });
   }
 };
+
 
 export const getMe = async (req, res) => {
   try {
